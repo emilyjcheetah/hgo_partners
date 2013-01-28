@@ -1,0 +1,44 @@
+
+<div id="wrapper">
+
+	<div class="customer-profile">
+
+		
+	  <div class="active_causes">
+				<h3>Active Causes</h3>
+		<ul class="schoolprojects">
+						<?php 
+                        foreach($this->prdetails as $sp)
+                        {
+                         ?>
+                             <li><a href="<?php echo $this->url(array('controller'=>'Userarea','action'=>'projectdetail', 'projectid'=>$sp['ProjectId']))?>"><?php echo $sp['ProjectName'] ?></a><li>
+                             
+                        <?php 
+                        }
+                        
+                        ?>
+             </ul>
+             <h3>Summary</h3>
+             <table width="95%" border="0" align="center" cellpadding="5" cellspacing="5" class="table1">
+                  <tr>
+                    <td width="47%"><strong>Upcoming Causes</strong></td>
+                    <td width="53%">20</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Passed DeadLine Goal Not Meet</strong></td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Passed DeadLine Goal Meet</strong></td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total Amount Collected</strong></td>
+                    <td>2000</td>
+                  </tr>
+        	</table>
+                   </div>
+	</div>
+    
+   
+</div>

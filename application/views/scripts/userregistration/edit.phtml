@@ -1,0 +1,11 @@
+<h2><?php
+ 
+$userDetails = new Zend_Session_Namespace('userDetails');
+$dd= $this->dictionary->getDictionary('Edit User Registration', $userDetails->lang); 
+
+echo $dd->Value;
+
+?></h2>
+
+
+<?php echo $this->form;?>

@@ -1,0 +1,180 @@
+<br /><br />
+<style>
+.close { text-decoration: underline }
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     text-align:center;
+     z-index: 200;
+     background-image:url(maskBG.png);
+    background-color: black;
+    opacity:0.9;
+}
+
+#overlay div {
+     width:350px;
+     margin: 100px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+	 font-family:Arial, Helvetica, sans-serif;
+	 
+}
+
+#overlay div textarea {
+	
+	font-size:12px;
+	
+}
+.cancel{
+	display:block;
+	border:1px solid black;
+	
+}
+</style>
+<script language="javascript">
+var mm="";
+function overlay(mid){
+
+el = document.getElementById("overlay");
+el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+mm= mid;
+}
+
+function closeme() {
+     document.getElementById("overlay").style.visibility = 'hidden';
+}
+
+function sendme()
+{
+var res =document.getElementById("reason").value; 
+alert(res)	
+window.location.replace("Adminarea/rejectproject/projectid/"+mm+"/reason/"+res)
+close();
+
+}
+
+</script>
+<div id="view-content">
+	<h2>Welcome <?php 
+		echo ($this->firstname." ");
+	
+	echo ($this->lastname);
+
+	?></h2>
+  <div id="schoollist_admin">
+    <h3>Pending Schools List</h3>
+	<table width="100%" border="1">
+  <tr>
+    <td width="19%">School Name&nbsp;</td>
+    <td width="20%">Contact Name&nbsp;</td>
+    <td width="22%">Phone Office</td>
+    <td width="23%">Email&nbsp;</td>
+    <td width="16%">&nbsp;</td>
+  </tr>
+	<?php 
+	foreach($this->pendingschoollist as $plist)
+	{
+	   
+	
+	?>
+	
+     <tr>
+    <td><?php echo $plist['SchoolName']?>&nbsp;</td>
+    <td><?php echo $plist['ContactFirstName']." ".$plist['ContactLastName'] ?>&nbsp;</td>
+    <td><?php echo $plist['PhoneOffice']?></td>
+    <td><?php echo $plist['Email']?>&nbsp;</td>
+    <td><a href="<?php echo $this->url(array('controller'=>'Adminarea', 'action'=>'acceptschool', 'schoolid'=>$plist['RegistrationId']));?>" >Accept</a> / <a href="<?php echo $this->url(array('controller'=>'Adminarea', 'action'=>'rejectschool', 'schoolid'=>$plist['RegistrationId']));?> " >Reject</a>&nbsp;</td>
+  </tr>
+	
+	<?php 
+	}
+	?>
+	</table>
+	
+	</div>
+    
+    <div id="schoollist_admin">
+    <h3>Pending Projects List</h3>
+	<table width="100%" border="1">
+  <tr>
+    <td width="19%">Project Name&nbsp;</td>
+    <td width="20%">Category&nbsp;</td>
+    <td width="22%">Goal Investment</td>
+    <td width="23%">Start Date&nbsp;</td>
+    <td width="16%">&nbsp;</td>
+  </tr>
+	<?php 
+	foreach($this->pendingprojects as $plist)
+	{
+	
+	?>
+	
+     <tr>
+    <td><?php echo $plist['ProjectName']?>&nbsp;</td>
+    <td><?php echo $plist['Category'] ?>&nbsp;</td>
+    <td><?php echo $plist['Goal_Investment']?></td>
+    <td><?php echo $plist['StartDate']?>&nbsp;</td>
+    <td><a href="<?php echo $this->url(array('controller'=>'Adminarea', 'action'=>'acceptproject', 'projectid'=>$plist['ProjectId']),null,true);?>" >Accept</a> / <a href="#" onclick="overlay(<?php echo $plist['ProjectId']?>)" >Reject</a>&nbsp;</td>
+  </tr>
+	
+	<?php 
+	}
+	?>
+	</table>
+	
+	</div>
+    
+    
+  <div id="topprojects">
+    <h3>Top Project List</h3>
+	<table width="100%" border="1">
+  <tr>
+    <td width="19%">School Name&nbsp;</td>
+    <td width="20%">Contact Name&nbsp;</td>
+    <td width="22%">Project Name</td>
+    <td width="23%">Total Amount&nbsp;</td>
+    </tr>
+	<?php 
+	foreach($this->topprojects as $plist)
+	{
+	
+	?>
+	
+     <tr>
+    <td><?php echo $plist['SchoolName']?>&nbsp;</td>
+    <td><?php echo $plist['ContactFirstName']." ".$plist['ContactLastName'] ?>&nbsp;</td>
+    <td><?php echo $plist['ProjectName']?></td>
+    <td><?php echo $plist['TotalAmount']?>&nbsp;</td>
+    </tr>
+	
+	<?php 
+	}
+	?>
+	</table>
+	
+	</div>
+</div>
+
+
+
+
+<div id="overlay">
+<div>
+<p><h3>Reject Reason.</h3></p>
+
+<textarea name="reason" cols="60" rows="4" id="reason"></textarea>
+<input name="submit" type="button" value="Submit" onclick="sendme()" />
+<input type="button" name="button" id="button" value="Cancel" onclick="closeme()" />
+</div>
+</div>
+
+
+ 
+ 
+

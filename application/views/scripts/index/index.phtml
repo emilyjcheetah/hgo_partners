@@ -1,0 +1,29 @@
+
+<?php $this->headLink()->prependStylesheet($this->baseUrl('css/home.css')) ?>
+       
+    <?php echo $this->cssHelper() ?> 
+    <?php  echo $this->form; ?>   
+
+<?php
+$userDetails = new Zend_Session_Namespace('userDetails');
+
+echo $this->headTitle("Home Page")
+?>
+
+<div class="home">
+
+<div class="hero">
+<h2>Promotional content</h2>
+<p> dskljfds sdfjsdfsdlf sdldsjfl sdfdsjflk dfjdsklfjlsd ldsjf lkdsjfdsajflsad sdaaf dsfdsf sdf sdfsd sdfdsf dsf dsfsdfds fsdaf sd fds fdsd
+dsfds fdsfds f sdf sd f dsf ds fds f df sd </p>
+
+</div>
+<h2>Home</h2>
+<p>i am home at script
+
+<?php $dd= $this->dictionary->getDictionary('Registered User List', $userDetails->lang); 
+
+echo $dd->Value;
+
+?></p>
+</div>

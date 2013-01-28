@@ -1,0 +1,243 @@
+<?php echo $this->doctype() ; ?>
+
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <?php //echo $this->headTitle("abc"); ?>
+    <? $this->headLink()->prependStylesheet($this->baseUrl('css/style.css') )?> 
+    
+     <? $this->headLink()->prependStylesheet($this->baseUrl('css/jquery.datepick.css') )?> 
+      <? $this->headLink()->prependStylesheet($this->baseUrl('css/polyglot-language-switcher.css') )?> 
+      <? $this->headLink()->prependStylesheet($this->baseUrl('css/quake.slider.css') )?> 
+      <? $this->headLink()->prependStylesheet($this->baseUrl('css/quake.skin.css') )?>     
+    <?= $this->cssHelper() ?>    
+   <? $this->headScript()->prependFile("http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js") ?> 
+    <? $this->headScript()->prependFile($this->baseUrl('js/global.js')) ?> 
+    <? $this->headScript()->appendFile($this->baseUrl('js/jquery.datepick.js')) ?> 
+    <? $this->headScript()->appendFile($this->baseUrl('js/jquery.polyglot.language.switcher.js')) ?> 
+    <? $this->headScript()->appendFile($this->baseUrl('js/quake.slider-min.js')) ?> 
+     <? $this->headScript()->appendFile($this->baseUrl('js/main.js')) ?> 
+    
+     
+    <? $this->javascriptHelper() ?> 
+    <?= $this->headScript() ?> 
+   <script type="text/javascript">
+        $(document).ready(function() {
+            $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({
+				effect: 'fade',
+                testMode: true,
+                onChange: function(evt){
+                    alert("The selected language is: "+evt.selectedItem);
+                }
+//                ,afterLoad: function(evt){
+//                    alert("The selected language has been loaded");
+//                },
+//                beforeOpen: function(evt){
+//                    alert("before open");
+//                },
+//                afterOpen: function(evt){
+//                    alert("after open");
+//                },
+//                beforeClose: function(evt){
+//                    alert("before close");
+//                },
+//                afterClose: function(evt){
+//                    alert("after close");
+//                }
+			});
+			
+			$('.quake-slider').quake({
+                thumbnails: true,
+                animationSpeed: 800,
+                applyEffectsRandomly: true,
+                /*navPlacement: 'outside',*/
+               navAlwaysVisible: true,
+                captionOpacity: '0.3',
+                
+
+            });
+
+            function captionAnimateCallback(captionWrapper, captionContainer, orientation) {
+                captionWrapper.css({ left: '-966px' }).stop(true, true).animate({ left: 0 }, 1000);
+                captionContainer.css({ left: '-966px' }).stop(true, true).animate({ left: 0 }, 1000);
+            }
+            function captionAnimationCallback1(captionWrapper, captionContainer, orientation) {
+                captionWrapper.css({ top: '-321px' }).stop(true, true).animate({ top: 0 }, 1000);
+                captionContainer.css({ top: '-321px' }).stop(true, true).animate({ top: 0 }, 1000);
+            }
+        });
+    </script>
+    
+</head>
+<body>
+
+<div class="center_box">
+  <!--Header -->
+  <header>
+    <div class="header_top">
+      <div id="center_wrap">
+        <div class="one_third ">
+          <div class="raised_counter">
+            <div class="dollar_sign">$</div>
+            <div id="" class="raisedcount_numbers">999</div>
+            <div id="" class="raisedcount_numbers">999</div>
+            <div id="" class="raisedcount_numbers lastno">999</div>
+          </div>
+          <h5>Raised to date</h5>
+          <div class="project_created_wrapper">
+            <div class="project_head">Project Created:</div>
+            <div id="" class="project_numbers">99</div>
+          </div>
+        </div>
+        <div class="one_third logo"> <a href="index.html"><img src="images/logo.png" alt="logo"></a> </div>
+        <div class="one_third">
+          <div class="login_wrapper">
+            <ul>
+              <li><a href="#">SIGN IN</a></li>
+              <li><a href="#">SIGN UP</a></li>
+              <li><a href="#">FOR EDUCATORS</a></li>
+            </ul>
+          </div>
+          <div class="lang_wrapper">
+			<!-- begin language switcher -->
+				<div id="polyglotLanguageSwitcher">
+					<form action="#">
+						<select id="polyglot-language-options">
+							<option id="en" value="en" selected>English</option>
+							<option id="fr" value="fr">Fran&ccedil;ais</option>
+							<option id="de" value="de">Deutsch</option>
+							<option id="it" value="it">Italiano</option>
+							<option id="es" value="es">Espa&ntilde;ol</option>
+						</select>
+					</form>
+				</div>
+				<!-- end language switcher -->
+			
+		  
+		  </div>
+          <div class="top_search">
+            <form>
+              <input type="search" placeholder="Find a cause..">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <nav>
+      <ul>
+        <li class="icon_1 "><a href="inner.html">ABOUT</a></li>
+        <li class="icon_2"><a href="">THE MOVEMENT</a></li>
+        <li class="icon_3"><a href="">DISCOVER CAUSES</a></li>
+        <li class="icon_4"><a href="">PROJECTS</a></li>
+        <li class="icon_5"><a href="">PARTICIPATE</a></li>
+        <li class="icon_6"><a href="">THE BLOG</a></li>
+      </ul>
+    </nav>
+	<div class="clear"></div> 
+    
+
+<?php  echo $this->layout()->content;
+
+?>
+
+
+
+ <section id="press_wrapper" class="clear">
+    <div id="center_wrap">
+      <div class="one_fifth">
+        <div class="press_title">In the</div>
+        <div class="press_subtitle">Press</div>
+      </div>
+      <div class="one_fifth">
+        <div class="press_logo"> <img src="images/press1.png" alt=""> </div>
+      </div>
+      <div class="one_fifth">
+        <div class="press_logo"> <img src="images/press2.png" alt=""> </div>
+      </div>
+      <div class="one_fifth">
+        <div class="press_logo"> <img src="images/press3.png" alt=""> </div>
+      </div>
+      <div class="one_fifth">
+        <div class="press_logo"> <img src="images/press4.png" alt=""> </div>
+      </div>
+    </div>
+  </section>
+  <div class="clear"></div>
+  <footer>
+    <div id="center_wrap">
+	  <div class="inner_footer">	
+      <div class="footer_column1">
+        <div class="quick_links">
+          <h4>Quick Links</h4>
+          <div class="links_left">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">The Movement</a></li>
+              <li><a href="#">Discover Causes</a></li>
+            </ul>
+          </div>
+          <div class="links_right">
+            <ul>
+              <li><a href="#">Project</a></li>
+              <li><a href="#">Participate</a></li>
+              <li><a href="#">The Blog</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <!--	<p>Copyright 2012-2013-Company </p>	-->
+      </div>
+      <div class="footer_column2">
+        <div class="subscribe">
+          <h4>Subscribe to News Letter</h4>
+          <div class="subscribe_input_wrapper">
+            <form>
+              <div class="label">
+                <input type="text" placeholder="@ Your email">
+              </div>
+              <div class="signup_submit_wrapper">
+                <input type="submit" class="signup_submit" value="Subscribe" id="" name="signup_submit">
+              </div>
+              <p>You can <a href="">Unsubscribe</a> anytime</p>
+            </form>
+          </div>
+          <div class="footer_nav1">
+            <ul>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Sign In</a></li>
+              <li><a href="">Create School Account</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer_column3">
+        <div class="social">
+          <h4>Social Pages</h4>
+          <div class="social_icons">
+            <ul>
+              <li><a href=""><img src="images/fb_icon.png" alt=""></a></li>
+              <li><a href=""><img src="images/twt_icon.png" alt=""></a></li>
+              <li><a href=""><img src="images/google_icon.png" alt=""></a></li>
+              <li><a href=""><img src="images/ytube_icon.png" alt=""></a></li>
+            </ul>
+          </div>
+          <div class="hr_dashed"></div>
+          <div class="footer_nav1">
+            <ul>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Privacy Terms of Use</a></li>
+              <li><a href="">Support In the Press</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+  </footer>
+</div>
+
+</body>
+</html>

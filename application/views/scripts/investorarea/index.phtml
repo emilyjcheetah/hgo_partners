@@ -1,0 +1,48 @@
+
+<div id="view-content">
+
+	<h2>Welcome <?php 
+		echo ($this->firstname." ");
+	
+	echo ($this->lastname);
+
+	?></h2>
+	
+    <table width="100%" border="1">
+  <tr>
+    <td>Project Name&nbsp;</td>
+    <td>School Name&nbsp;</td>
+    <td>Total Investment&nbsp;</td>
+    <td>Goal Investment&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+	
+	<?php 
+	foreach($this->prdetails as $sp)
+	{
+	    ?>
+         <tr>
+    <td><a href="<?php echo $this->url(array('controller'=>'Schoolarea','action'=>'pdetail', 'projectid'=>$sp['ProjectId']))?>"><?php echo $sp['ProjectName'] ?></a></td>
+    <td><?php echo $sp['SchoolName'] ?>&nbsp;</td>
+    <td><?php echo $sp['InvestmentAmount'] ?>&nbsp;</td>
+    <td><?php echo $sp['Goal_Investment'] ?>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+	     
+	     
+	     <?php 
+	}
+	
+	?>
+	
+</div>
+
+ 
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>

@@ -1,0 +1,23 @@
+
+<div id="view-content">
+
+	<h2>Welcome <?php 
+		echo ($this->sfirst." ");
+	
+	echo ($this->slast);
+
+	?></h2>
+	<ul class="schoolprojects">
+	
+	<?php 
+	foreach($this->schoolprojects as $sp)
+	{
+	    ?>
+	     <li><a href="<?php echo $this->url(array('controller'=>'Schoolarea','action'=>'pdetail', 'projectid'=>$sp->ProjectId))?>"><?php echo $sp['ProjectName'] ?></a><li>
+	     
+	     <?php 
+	}
+	
+	?>
+	</ul>
+</div>

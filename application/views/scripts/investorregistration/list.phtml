@@ -1,0 +1,29 @@
+<?php
+$this->title = "My School";
+$this->headTitle($this->title);
+?>
+<h2>Registered Investor List:</h2>
+<p><a href="<?php echo $this->url(array('controller'=>'Investorregistration','action'=>'index'));?>">Add New Investor</a></p>
+
+<table border="1">
+<tr>
+<th>Userid</th>
+<th>Password</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>&nbsp;</th>
+</tr>
+<?php foreach($this->investorregistration as $sreg) : ?>
+<tr>
+<td><?php echo $this->escape($sreg->UserId);?></td>
+<td><?php echo $this->escape($sreg->Password);?></td>
+<td><?php echo $this->escape($sreg->FirstName);?></td>
+<td><?php echo $this->escape($sreg->LastName);?></td>
+<td>
+<a href="<?php echo $this->url(array('controller'=>'Investorregistration', 'action'=>'edit', 'investorid'=>$sreg->InvestorId));?>">Edit</a>
+<a href="<?php echo $this->url(array('controller'=>'Investorregistration', 'action'=>'delete', 'investorid'=>$sreg->InvestorId));?>">Delete</a>
+
+</td>
+</tr>
+<?php endforeach; ?>
+</table>

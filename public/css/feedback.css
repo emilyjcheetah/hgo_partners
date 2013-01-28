@@ -1,0 +1,50 @@
+.content p {
+	
+	margin:10px;
+font-size: 12px;
+}
+
+.content{
+	
+	padding:10px;
+width:778px;
+	
+}
+
+.zend_form {
+	
+	
+	
+border: 0px solid #666;
+width:500px;
+padding-left:30px;
+}
+
+.myform label {
+	
+	font-size:13px;
+font-family: fantasy;
+color:green;
+
+
+   
+}
+
+.myform input:HOVER{
+	
+	font-size:12px;
+background : #ccc;
+	
+}
+
+.myform textarea {
+	
+	height:50px;
+	width:400px;
+}
+.errors li{
+	
+	font-size:12px;
+	display:inline-block;
+	color:red;
+	}

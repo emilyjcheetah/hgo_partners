@@ -1,0 +1,29 @@
+<?php
+$this->title = "Novelty Items";
+$this->headTitle($this->title);
+?>
+<h2>Novelty Items List:</h2>
+<p><a href="<?php echo $this->url(array('controller'=>'ProjectVideos','action'=>'index'));?>">Add New Project Video</a></p>
+
+<table border="1">
+<tr>
+<th>ProjectId</th>
+<th>Video Path</th>
+<th>Created On</th>
+<th></th>
+<th>&nbsp;</th>
+</tr>
+<?php foreach($this->projectvideo as $nitem) : ?>
+<tr>
+<td><?php echo $this->escape($nitem->ProjectId);?></td>
+<td><?php echo $this->escape($nitem->VideoPath);?></td>
+<td><?php echo $this->escape($nitem->CreateDate);?></td>
+<td></td>
+<td>
+<a href="<?php echo $this->url(array('controller'=>'ProjectVideos', 'action'=>'edit', 'projectvideoid'=>$nitem->ProjectVideoId));?>">Edit</a>
+<a href="<?php echo $this->url(array('controller'=>'ProjectVideos', 'action'=>'delete', 'projectvideoid'=>$nitem->ProjectVideoId));?>">Delete</a>
+
+</td>
+</tr>
+<?php endforeach; ?>
+</table>

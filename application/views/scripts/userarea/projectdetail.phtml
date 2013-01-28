@@ -1,0 +1,45 @@
+<?php
+$projectdetails= $this->schoolprojects;
+$pimg=$projectdetails['ThankyouImagePath'];
+$totalinvestment = $this->totalinvestment;
+
+//echo $this->baseUrl('images/logo.jpg');
+
+
+//echo $pimg;
+
+?>
+<div id="wrapper">
+<div class="customer-profile">
+<h3><?php echo $projectdetails['ProjectName'] ?> Details</h3>
+
+<table width="100%" border="0" cellpadding="3" class="table1">
+  <tr>
+		<td width="88%">
+	    	<table width="100%" border="0" cellpadding="5" cellspacing="5" >
+			      <tr>
+			        <td width="41%"><strong>Project Name</strong></td>
+			        <td width="59%"><?php echo $projectdetails['ProjectName'] ?>&nbsp;</td>
+			      </tr>
+			      <tr>
+			        <td><strong>Goal Investment</strong></td>
+			        <td><?php echo $projectdetails['Goal_Investment'] ?>&nbsp;</td>
+			      </tr>
+			      <tr>
+			        <td><strong>Investment Collected</strong></td>
+			        <td><?php echo $this->totalinvestment ?>&nbsp;</td>
+			      </tr>
+			      <tr>
+			        <td><strong>Description</strong></td>
+			        <td><div class="pdetail"> <?php echo $projectdetails['Description'] ?>&nbsp; </div></td>
+	          </tr>
+	   		 </table>
+	   	</td>
+    	<td width="12%" align="center" valign="middle">
+    		<img src="<?php echo $this->baseUrl('projectsupload/').$pimg ?>" width="80px" height="80px"  />&nbsp;
+    	</td>
+  </tr>
+</table>
+</div>
+</div>
+

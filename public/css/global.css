@@ -1,0 +1,154 @@
+*
+{
+	margin:0 0;
+	padding:0 0;
+	font-family:sans-serif;
+}
+.header {
+	
+	height:100px;
+	background: #ccc;
+	width:800px;
+	margin:0 auto;
+}
+
+.header ul {
+	
+	list-style:none;
+	height:28px;
+	background:#333;
+	
+}
+
+.header ul li
+{
+	float:left;
+	display:inline;
+	padding:4px 10px;
+	border:1px solid #fff;
+	background:#EFEFEF;
+	
+}
+
+.header ul li a {
+	text-decoration: none;
+	color:#000;
+	
+	
+}
+
+.header ul li a:hover{
+	
+	color:#F00;
+}
+
+
+.footer{
+	
+	margin:0 auto;
+	width:800px;
+	height:100px;
+	background:#4cc;
+}
+.content{
+	margin:0 auto;
+	width:798px;
+	border:1px solid #000;
+}
+
+.content p {
+	
+	margin:10px;
+font-size: 12px;
+}
+
+
+.rightcontent{
+	
+	float:right;
+	padding-right:30px;
+	border:1px solid #ccc;
+	height:auto;
+	width:300px;
+}
+
+.schoolprojects {
+	margin:10px;
+	
+	
+}
+
+.schoolprojects li {
+	
+
+	display:block;
+	padding:4px 10px;
+	border:1px solid #fff;
+	background:#EFEFEF;
+	
+	
+	
+}
+
+#view-content{
+	margin:10px;
+	
+}
+.errors li{
+	
+	font-size:12px;
+	display:inline-block;
+	color:red;
+	}
+
+#wrapper2
+	{ width:500px; margin:20px auto 0px auto; background:#daebff; border-radius:10px 10px 0px 0px; border:1px solid #4c5359; border-bottom:none; position:relative;}
+
+#wrapper
+	{ 
+	width:600px; margin:20px ;  position:relative;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+	}
+
+#wrapper h22 {
+	
+	backgrond:#cccccc; height:37px; line-height:37px; color:#FFFFFF; margin:0px; padding:0px 0px 0px 10px; font-size:22px;
+	
+}
+
+#wrapper .customer-profile
+	{border-radius:10px; border:2px solid #fff; box-shadow:0px 0px 8px #888; background:#666c7a; margin:10px; overflow:hidden;
+	padding:10px;
+	}
+	
+#wrapper .customer-profile h3
+	{ backgrond:#cccccc; height:37px; line-height:37px; color:#FFFFFF; margin:0px; padding:0px 0px 0px 10px; font-size:18px;}
+	
+#wrapper .customer-profile p{color:#FFFFFF; margin:0px; padding:10px; font-size:12px; line-height:21px;}
+	
+#wrapper .customer-profile .form-header{  float:right;  margin-right:10px; margin-top:5px; }
+
+.pdetail {
+	padding:5px;
+}
+
+.table1 {
+	
+	
+	padding:4px 10px;
+	border:1px solid #fff;
+	background:#EFEFEF;
+	line-height:15px;
+	margin-left:10px;
+	
+	
+	
+}
+
+.table1 img {
+	padding:0px;
+	
+}
+	

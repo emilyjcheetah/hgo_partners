@@ -1,0 +1,23 @@
+<br />
+<br />
+<div id="view-content">
+<?php
+$this->title = "New Project";
+$this->headTitle($this->title);
+?>
+	<h2>New Project Form</h2>
+	
+	<script type="text/javascript"> 
+	$(document).ready(function(){
+		$(function() {
+			$('#StartDate').datepick({dateFormat: 'yyyy-mm-dd'});
+			$('#EndDate').datepick({dateFormat: 'yyyy-mm-dd'});
+			
+		});
+	
+	});
+		
+		  
+	  </script>
+	  <?=$this->form->render()?> 
+</div>

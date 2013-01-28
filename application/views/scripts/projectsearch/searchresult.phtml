@@ -1,0 +1,36 @@
+<br /><br />
+<div id="view-content">
+<p><h2>Project Search</h2></p>
+    
+    <table width="100%" border="1">
+  <tr>
+    <td width="21%" bgcolor="#999999"><strong>School Name</strong></td>
+    <td width="20%" bgcolor="#999999"><strong>Project Name</strong></td>
+    <td width="15%" bgcolor="#999999"><strong>Category</strong></td>
+    <td width="19%" bgcolor="#999999"><strong>Project Date</strong></td>
+    <td width="25%" bgcolor="#999999"><strong>Total Investment</strong></td>
+  </tr>
+	<?php 
+
+	foreach($this->result as $myresult)
+	{
+	   
+	  ?>
+       <tr>
+    <td><? echo $myresult['SchoolName']; ?>&nbsp;</td>
+    <td><? echo $myresult['ProjectName']; ?>&nbsp;</td>
+    <td><? echo $myresult['Category']; ?></td>
+    <td><? echo $myresult['StartDate']; ?>&nbsp;</td>
+    <td><? echo $myresult['AmountCollected']; ?>&nbsp;</td>
+  </tr>
+      
+      
+      <?
+	}
+	
+	?>
+
+
+ 
+</table>
+</div>

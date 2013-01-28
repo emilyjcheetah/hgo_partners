@@ -1,0 +1,55 @@
+<?php echo $this->doctype() ; ?>
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <?php //echo $this->headTitle("abc"); ?>
+    <? $this->headLink()->prependStylesheet($this->baseUrl('css/global.css') )?> 
+    <? $this->headLink()->appendStylesheet('/css/iefix.css','screen','lt IE 7') ?> 
+     <? $this->headLink()->prependStylesheet($this->baseUrl('css/jquery.datepick.css') )?>     
+    <?= $this->cssHelper() ?>    
+   <? $this->headScript()->prependFile("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js") ?> 
+    <? $this->headScript()->prependFile($this->baseUrl('js/global.js')) ?> 
+    <? $this->headScript()->appendFile($this->baseUrl('js/jquery.datepick.js')) ?> 
+    
+     
+    <? $this->javascriptHelper() ?> 
+    <?= $this->headScript() ?> 
+   
+    
+</head>
+<body>
+
+<div class="header">
+<h1>My Website</h1>
+<ul>
+<li><a href="<?php echo $this->url(array('controller'=>'Index', 'action'=>'index'),null,true);?>" > Home</a></li>
+<li><a href="<?php echo $this->url(array('controller'=>'Projects', 'action'=>'list'),null,true);?>" > Projects</a></li>
+<li><a href="<?php echo $this->url(array('controller'=>'Investorarea', 'action'=>'index'),null,true);?>" > Investor Area</a></li>
+<li><a href="<?php echo $this->url(array('controller'=>'Userregistration', 'action'=>'index'),null,true);?>" > User Registration</a></li>
+<li><a href="<?php echo $this->url(array('controller'=>'Investorlogout', 'action'=>'index'),null,true);?>" > Logout</a></li>
+
+
+</ul>
+
+
+</div>
+<div class="content">
+<div class="rightcontent">this is right content
+
+<select onchange="setlocale(this.value)">
+<option>Select</option>
+<option value="2" >English</option>
+<option value="3">Dutch</option>
+</select>
+
+</div>
+<p>
+<?php  echo $this->layout()->content;
+
+?>
+</p>
+</div>
+
+
+<div class="footer"></div>
+</body>
