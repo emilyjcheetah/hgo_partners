@@ -18,7 +18,7 @@
     position: absolute;
     text-decoration: none;
     background-repeat: no-repeat;
-    z-index: 10000;
+    z-index: 100;
     cursor: pointer;
     text-indent: -9999px;
     -webkit-touch-callout: none;
